@@ -1,5 +1,12 @@
 {
-    "users": [],
+    "users": [
+        {
+            "id": 1,
+            "name": "Igor Moreira",
+            "email": "igor@email.com",
+            "password": "123456"
+        }
+    ],
     "payment-types": [
         {
             "id": 1,
@@ -72,14 +79,14 @@
         {
             "id": 7,
             "name": "Porção de 500g Batata frita simples",
-            "description": "Lanche acompanha pão, hambúrguer, fatias de bacon, queijo, maionese, alface e tomate",
+            "description": "",
             "price": 19.0,
             "image": "https://assets.unileversolutions.com/recipes-v2/106683.jpg?imwidth=800"
         },
         {
             "id": 8,
             "name": "Porção de 500g Calabresa acebolada",
-            "description": "Lanche acompanha pão, hambúrguer, fatias de bacon, queijo, maionese, alface e tomate",
+            "description": "",
             "price": 19.0,
             "image": "https://www.anamariabrogui.com.br/assets/uploads/receitas/fotos/usuario-1682-52acab79d88efd805e6a341697e6aecb.jpg"
         },

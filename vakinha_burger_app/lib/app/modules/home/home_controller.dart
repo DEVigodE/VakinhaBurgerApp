@@ -12,7 +12,6 @@ class HomeController extends Cubit<HomeState> {
   HomeController(this.productsRepository) : super(const HomeState.initial());
 
   Future<void> loadProducts() async {
-    log('loadProducts');
     emit(state.copyWith(status: HomeStateStatus.loading));
 
     try {

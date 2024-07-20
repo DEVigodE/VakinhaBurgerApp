@@ -31,7 +31,7 @@ class GlobalContext {
       ),
     );
     Navigator.of(_navigatorKey.currentContext!, rootNavigator: true).pop();
-    Navigator.of(_navigatorKey.currentContext!).pushNamed('/login');
+    Navigator.of(_navigatorKey.currentContext!).pushNamed('/auth/login');
   }
 
   void connectionTimeout() {
