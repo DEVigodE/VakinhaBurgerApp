@@ -6,6 +6,7 @@ import 'core/ui/theme/theme_config.dart';
 import 'modules/auth/login/login_router.dart';
 import 'modules/auth/register/register_router.dart';
 import 'modules/home/home_router.dart';
+import 'modules/order/order_router.dart';
 import 'modules/product_detail/product_detail_router.dart';
 import 'modules/splash/splash_pages.dart';
 
@@ -27,6 +28,7 @@ class AppWidget extends StatelessWidget {
           '/productDetail': (context) => ProductDetailRouter.page,
           '/auth/login': (context) => LoginRouter.page,
           '/auth/register': (context) => RegisterRouter.page,
+          '/order': (context) => OrderRouter.page,
         },
         navigatorKey: _navigatorKey,
       ),

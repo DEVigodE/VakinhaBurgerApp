@@ -49,6 +49,7 @@ dependencies:
   equatable: ^2.0.5
   auto_size_text: ^3.0.0
   validatorless: ^1.2.3
+  flutter_awesome_select_clone: ^7.5.0
 
 dev_dependencies:
   flutter_test:

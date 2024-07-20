@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../core/constants/local_storage_constants.dart';
 import '../../../core/exceptions/unauthorized_exception.dart';
 import '../../../repositories/auth/auth_repository.dart';
 import 'login_state.dart';
@@ -16,8 +17,8 @@ class LoginController extends Cubit<LoginState> {
       emit(state.copyWith(status: LoginStatus.login));
       final authModel = await _authRepository.loginUser(email, password);
       final sp = await SharedPreferences.getInstance();
-      await sp.setString('accesssToken', authModel.accessToken);
-      await sp.setString('refreshToken', authModel.refreshToken);
+      await sp.setString(LocalStorageConstants.accessToken, authModel.accessToken);
+      await sp.setString(LocalStorageConstants.refreshToken, authModel.refreshToken);
       emit(state.copyWith(status: LoginStatus.success));
     } on UnauthorizedException catch (e, s) {
       log('LOG: Email ou senha inválidos', error: e, stackTrace: s, name: 'LoginController');
