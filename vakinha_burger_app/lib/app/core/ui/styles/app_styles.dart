@@ -14,7 +14,7 @@ class AppStyles {
           borderRadius: BorderRadius.circular(7),
         ),
         backgroundColor: ColorsApp.i.primary,
-        textStyle: TextStyles.i.textButtonLabel.copyWith(color: Colors.white),
+        textStyle: TextStyles.i.textButtonLabel,
       );
 }
 

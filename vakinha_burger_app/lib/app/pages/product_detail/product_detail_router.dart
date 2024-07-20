@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'product_detail_controller.dart';
 import 'product_detail_page.dart';
 
 class ProductDetailRouter {
@@ -8,8 +9,12 @@ class ProductDetailRouter {
 
   static Widget get page => MultiProvider(
         providers: [
-          Provider(create: (context) => Object()),
+          Provider(create: (context) => ProductDetailController()),
         ],
-        child: const ProductDetailPage(),
+        builder: (context, child) {
+          final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+          return ProductDetailPage(product: args['product']);
+        },
+        //child: const ProductDetailPage(),
       );
 }
