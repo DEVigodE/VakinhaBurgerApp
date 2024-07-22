@@ -50,6 +50,7 @@ dependencies:
   auto_size_text: ^3.0.0
   validatorless: ^1.2.3
   flutter_awesome_select_clone: ^7.5.0
+  confetti: ^0.7.0
 
 dev_dependencies:
   flutter_test:

@@ -1,11 +1,11 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../constants/local_storage_constants.dart';
+import 'package:top_snackbar_flutter/custom_snack_bar.dart';
+import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
 class GlobalContext {
-  late GlobalKey<NavigatorState> _navigatorKey;
+  late final GlobalKey<NavigatorState> _navigatorKey;
 
   static GlobalContext? _instance;
 
@@ -17,21 +17,31 @@ class GlobalContext {
 
   void loginExpire() async {
     final sp = await SharedPreferences.getInstance();
-    sp.remove(LocalStorageConstants.accessToken);
-    ScaffoldMessenger.of(_navigatorKey.currentContext!).showSnackBar(
-      SnackBar(
-        elevation: 0,
-        behavior: SnackBarBehavior.floating,
-        backgroundColor: Colors.transparent,
-        content: AwesomeSnackbarContent(
-          title: 'Login Expirado',
-          message: 'Login Expirado, faça login novamente',
-          contentType: ContentType.failure,
-        ),
+    sp.clear();
+    //sp.remove(LocalStorageConstants.accessToken);
+    showTopSnackBar(
+      _navigatorKey.currentState!.overlay!,
+      const CustomSnackBar.error(
+        message: 'Login Expirado, faça login novamente',
+        backgroundColor: Colors.black,
       ),
     );
-    Navigator.of(_navigatorKey.currentContext!, rootNavigator: true).pop();
-    Navigator.of(_navigatorKey.currentContext!).pushNamed('/auth/login');
+    _navigatorKey.currentState!.popUntil(ModalRoute.withName('/home'));
+
+    // .showSnackBar(
+    //   SnackBar(
+    //     elevation: 0,
+    //     behavior: SnackBarBehavior.floating,
+    //     backgroundColor: Colors.transparent,
+    //     content: AwesomeSnackbarContent(
+    //       title: 'Login Expirado',
+    //       message: 'Login Expirado, faça login novamente',
+    //       contentType: ContentType.failure,
+    //     ),
+    //   ),
+    // );
+    // Navigator.of(_navigatorKey.currentContext!, rootNavigator: true).pop();
+    // Navigator.of(_navigatorKey.currentContext!).pushNamed('/auth/login');
   }
 
   void connectionTimeout() {
