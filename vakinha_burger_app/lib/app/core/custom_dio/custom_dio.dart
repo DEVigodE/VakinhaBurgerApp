@@ -14,7 +14,7 @@ class CustomDio extends BaseDio {
         ) {
     interceptors.addAll(
       [
-        AuthInterceptor(),
+        AuthInterceptor(dio: this),
         LogInterceptor(
           //request: true,
           requestHeader: true,
