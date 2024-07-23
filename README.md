@@ -25,4 +25,4 @@ dart pub global activate json_rest_server
 ## Abrindo aplicativo
 Assistir ao vídeo diretamente 
 
-[![Demonstração do Projeto](files/assets/images/thumbnail.png)](https://www.youtube.com/results?search_query=vakinha+burger).
+[![Demonstração do Projeto](files/assets/images/thumbnail.png)](https://www.youtube.com/watch?v=MLCbDAFjC70&t=10s)
