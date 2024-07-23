@@ -25,4 +25,4 @@ dart pub global activate json_rest_server
 ## Abrindo aplicativo
 Assistir ao vídeo diretamente 
 
-[![Demonstração do Projeto](images/thumbnail.png)](files/Showcase_VakinhaBurger(FlutterApp_with_BloC+Provider).mp4).
+[![Demonstração do Projeto](files/assets/images/thumbnail.png)](files/Showcase_VakinhaBurger(FlutterApp_with_BloC+Provider).mp4).
